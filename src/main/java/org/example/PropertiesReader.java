@@ -5,10 +5,10 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesReader {
-    public static String getConnectionURLForMySql(){
-        try(InputStream input = PropertiesReader.class.getClassLoader().getResourceAsStream("application.properties")){
+    public static String getConnectionURLForMySql() {
+        try (InputStream input = PropertiesReader.class.getClassLoader().getResourceAsStream("application.properties")) {
             Properties prop = new Properties();
-            if(input == null){
+            if (input == null) {
                 System.out.println("cannot find application.properties");
                 return null;
             }
@@ -23,16 +23,16 @@ public class PropertiesReader {
                     .append(prop.getProperty("mysql.db.database"))
                     .toString();
 
-        }catch (IOException e){
-              e.printStackTrace();
-              return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 
-    public static String getDatabaseUser(){
-        try(InputStream input = PropertiesReader.class.getClassLoader().getResourceAsStream("application.properties")){
+    public static String getDatabaseUser() {
+        try (InputStream input = PropertiesReader.class.getClassLoader().getResourceAsStream("application.properties")) {
             Properties prop = new Properties();
-            if(input == null){
+            if (input == null) {
                 System.out.println("cannot find application.properties");
                 return null;
             }
@@ -41,15 +41,16 @@ public class PropertiesReader {
 
             return prop.getProperty("mysql.db.username");
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
     }
-    public static String getDatabasePassword(){
-        try(InputStream input = PropertiesReader.class.getClassLoader().getResourceAsStream("application.properties")){
+
+    public static String getDatabasePassword() {
+        try (InputStream input = PropertiesReader.class.getClassLoader().getResourceAsStream("application.properties")) {
             Properties prop = new Properties();
-            if(input == null){
+            if (input == null) {
                 System.out.println("cannot find application.properties");
                 return null;
             }
@@ -58,7 +59,7 @@ public class PropertiesReader {
 
             return prop.getProperty("mysql.db.password");
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             return null;
         }

@@ -1,8 +1,8 @@
 package org.example;
 
 public class Client {
-    public long id;
-    public String name;
+    private long id;
+    private String name;
 
     public Client(long id, String name) {
         this.id = id;
